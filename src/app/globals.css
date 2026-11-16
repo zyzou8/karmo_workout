@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F9FAF8;
+  --foreground: #2D3621;
+  --scrollbar-track: #E2E6DA;
+  --scrollbar-thumb: #9EA68F;
+  --scrollbar-thumb-hover: #737B65;
+  --prose-heading: #2D3621;
+  --prose-body: #3F4636;
+  --prose-code-bg: #E2E6DA;
+  --prose-code-text: #4B5C35;
+  --body-base: #E2E6DA;
+  --body-muscle: #C9D0BD;
+  --body-selected: #2D3621;
+  --body-pin-ring: #ffffff;
+}
+
+.dark {
+  --background: #13170F;
+  --foreground: #F3F5EE;
+  --scrollbar-track: #1E2318;
+  --scrollbar-thumb: #3F4636;
+  --scrollbar-thumb-hover: #565D4A;
+  --prose-heading: #F3F5EE;
+  --prose-body: #C9D0BD;
+  --prose-code-bg: #2F3627;
+  --prose-code-text: #B9C9A5;
+  --body-base: #2F3627;
+  --body-muscle: #3F4636;
+  --body-selected: #F3F5EE;
+  --body-pin-ring: #13170F;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Olive Form: Marcellus for headings, Lato for everything else. */
+h1, h2, h3, .font-display {
+  font-family: var(--font-marcellus), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Room for the fixed bottom tab bar on phone widths. */
+.has-tabbar {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Streaming text animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.streaming-text {
+  animation: fadeIn 0.1s ease-out;
+}
+
+/* Prose styles for AI responses */
+.ai-response h1,
+.ai-response h2,
+.ai-response h3 {
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--prose-heading);
+}
+.ai-response h1 { font-size: 1.25rem; }
+.ai-response h2 { font-size: 1.1rem; }
+.ai-response h3 { font-size: 1rem; }
+
+.ai-response p {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: var(--prose-body);
+}
+
+.ai-response ul,
+.ai-response ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+}
+
+.ai-response li {
+  margin-bottom: 0.25rem;
+  color: var(--prose-body);
+}
+
+.ai-response strong {
+  color: var(--prose-heading);
+  font-weight: 600;
+}
+
+.ai-response code {
+  background: var(--prose-code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  color: var(--prose-code-text);
+}
