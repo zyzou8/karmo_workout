@@ -26,7 +26,7 @@ export default function CoachScreen() {
   const [input, setInput] = useState(route.params?.question ?? '')
   const [streaming, setStreaming] = useState(false)
   const [pending, setPending] = useState('')
-  const scrollRef = useRef<ScrollView>(null)
+  const scrollRef = useRef<React.ComponentRef<typeof ScrollView>>(null)
 
   useEffect(() => { loadCoachSettings().then(setSettings) }, [])
 
