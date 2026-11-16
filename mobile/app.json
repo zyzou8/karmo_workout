@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Karmo Workout",
+    "slug": "karmo-workout",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "backgroundColor": "#F9FAF8",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.karmo.workout",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Karmo Workout uses your camera to capture exercise form for AI analysis.",
+        "NSPhotoLibraryUsageDescription": "Karmo Workout needs photo library access to upload exercise, body, or meal photos."
+      }
+    },
+    "android": {
+      "package": "com.karmo.workout",
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Karmo Workout uses your camera to capture exercise form for AI analysis."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Karmo Workout needs photo library access to upload exercise, body, or meal photos."
+        }
+      ],
+      "expo-asset",
+      "expo-localization",
+      "expo-video",
+      "expo-font"
+    ]
+  }
+}
